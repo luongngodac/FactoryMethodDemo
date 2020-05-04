@@ -7,7 +7,16 @@ import chicago_pizza.ChicagoPepperoniStyle;
 
 public class ChicagoPizzaStore extends PizzaStore
 {
-
+    private static ChicagoPizzaStore store;
+    protected ChicagoPizzaStore(){}
+    public static ChicagoPizzaStore Store()
+    {
+        if(store == null)
+        {
+            store = new ChicagoPizzaStore();
+        }
+        return store;
+    }
     @Override
     protected Pizza createPizza(PizzaType type)
     {

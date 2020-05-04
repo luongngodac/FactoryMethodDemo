@@ -17,7 +17,16 @@ import ny_pizza.NYPepperoniStyle;
  */
 public class NYPizzaStore extends PizzaStore
 {
-
+    private static NYPizzaStore store;
+    protected NYPizzaStore (){}
+    public static NYPizzaStore Store()
+    {
+        if(store == null)
+        {
+            store = new NYPizzaStore();
+        }
+        return store;
+    }
     @Override
     protected Pizza createPizza(PizzaType type)
     {
